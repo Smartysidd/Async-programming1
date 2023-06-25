@@ -1,0 +1,53 @@
+const fs = require("fs")
+// //synchronously reading files 
+// console.log("before")
+// let data1 = fs.readFileSync('f1.txt')
+// let data2= fs.readFileSync('f2.txt')
+// let data3= fs.readFileSync('f3.txt')
+// console.log('This is file1 data ->' +data1)
+// console.log('This is file2 data ->' +data2)
+// console.log('This is file3 data ->' +data3)
+// console.log("after")
+
+//Asynchronous approach
+console.log("before")
+
+fs.readFile('f1.txt',readfile1callback1)
+
+    function readfile1callback1(err,data){
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log('file1 data->'+data)
+           
+        }
+    }
+
+     fs.readFile('f2.txt',readfile1callback)
+
+    function readfile1callback2(err,data){
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log('file2 data->'+data)
+            
+        }
+    }
+
+     fs.readFile('f3.txt',readfile1callback)
+
+    function readfile1callback3(err,data){
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log('file3 data->'+data)
+        }
+    }
+
+console.log("after")
+console.log("hello siddharth")
+console.log("byee siddharth")
+
